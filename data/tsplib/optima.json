@@ -1,0 +1,15 @@
+{
+  "eil51": {
+    "file": "eil51.tsp",
+    "optimum": 426
+  },
+  "berlin52": {
+    "file": "berlin52.tsp",
+    "optimum": 7542
+  },
+  "st70": {
+    "file": "st70.tsp",
+    "optimum": 675
+  }
+}
+
