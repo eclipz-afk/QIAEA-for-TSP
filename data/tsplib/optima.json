@@ -1,0 +1,442 @@
+{
+  "a280": {
+    "file": "a280.tsp",
+    "optimum": 2579
+  },
+  "ali535": {
+    "file": "ali535.tsp",
+    "optimum": 202339
+  },
+  "att48": {
+    "file": "att48.tsp",
+    "optimum": 10628
+  },
+  "att532": {
+    "file": "att532.tsp",
+    "optimum": 27686
+  },
+  "bayg29": {
+    "file": "bayg29.tsp",
+    "optimum": 1610
+  },
+  "bays29": {
+    "file": "bays29.tsp",
+    "optimum": 2020
+  },
+  "berlin52": {
+    "file": "berlin52.tsp",
+    "optimum": 7542
+  },
+  "bier127": {
+    "file": "bier127.tsp",
+    "optimum": 118282
+  },
+  "brazil58": {
+    "file": "brazil58.tsp",
+    "optimum": 25395
+  },
+  "brg180": {
+    "file": "brg180.tsp",
+    "optimum": 1950
+  },
+  "burma14": {
+    "file": "burma14.tsp",
+    "optimum": 3323
+  },
+  "ch130": {
+    "file": "ch130.tsp",
+    "optimum": 6110
+  },
+  "ch150": {
+    "file": "ch150.tsp",
+    "optimum": 6528
+  },
+  "d198": {
+    "file": "d198.tsp",
+    "optimum": 15780
+  },
+  "d493": {
+    "file": "d493.tsp",
+    "optimum": 35002
+  },
+  "d657": {
+    "file": "d657.tsp",
+    "optimum": 48912
+  },
+  "d1291": {
+    "file": "d1291.tsp",
+    "optimum": 50801
+  },
+  "d1655": {
+    "file": "d1655.tsp",
+    "optimum": 62128
+  },
+  "d2103": {
+    "file": "d2103.tsp",
+    "optimum": 80450
+  },
+  "d15112": {
+    "file": "d15112.tsp",
+    "optimum": 1573084
+  },
+  "d18512": {
+    "file": "d18512.tsp",
+    "optimum": 645238
+  },
+  "dantzig42": {
+    "file": "dantzig42.tsp",
+    "optimum": 699
+  },
+  "dsj1000": {
+    "file": "dsj1000.tsp",
+    "optimum": 18660188
+  },
+  "eil51": {
+    "file": "eil51.tsp",
+    "optimum": 426
+  },
+  "eil76": {
+    "file": "eil76.tsp",
+    "optimum": 538
+  },
+  "eil101": {
+    "file": "eil101.tsp",
+    "optimum": 629
+  },
+  "fl417": {
+    "file": "fl417.tsp",
+    "optimum": 11861
+  },
+  "fl1400": {
+    "file": "fl1400.tsp",
+    "optimum": 20127
+  },
+  "fl1577": {
+    "file": "fl1577.tsp",
+    "optimum": 22249
+  },
+  "fl3795": {
+    "file": "fl3795.tsp",
+    "optimum": 28772
+  },
+  "fnl4461": {
+    "file": "fnl4461.tsp",
+    "optimum": 182566
+  },
+  "fri26": {
+    "file": "fri26.tsp",
+    "optimum": 937
+  },
+  "gil262": {
+    "file": "gil262.tsp",
+    "optimum": 2378
+  },
+  "gr17": {
+    "file": "gr17.tsp",
+    "optimum": 2085
+  },
+  "gr21": {
+    "file": "gr21.tsp",
+    "optimum": 2707
+  },
+  "gr24": {
+    "file": "gr24.tsp",
+    "optimum": 1272
+  },
+  "gr48": {
+    "file": "gr48.tsp",
+    "optimum": 5046
+  },
+  "gr96": {
+    "file": "gr96.tsp",
+    "optimum": 55209
+  },
+  "gr120": {
+    "file": "gr120.tsp",
+    "optimum": 6942
+  },
+  "gr137": {
+    "file": "gr137.tsp",
+    "optimum": 69853
+  },
+  "gr202": {
+    "file": "gr202.tsp",
+    "optimum": 40160
+  },
+  "gr229": {
+    "file": "gr229.tsp",
+    "optimum": 134602
+  },
+  "gr431": {
+    "file": "gr431.tsp",
+    "optimum": 171414
+  },
+  "gr666": {
+    "file": "gr666.tsp",
+    "optimum": 294358
+  },
+  "hk48": {
+    "file": "hk48.tsp",
+    "optimum": 11461
+  },
+  "kroA100": {
+    "file": "kroA100.tsp",
+    "optimum": 21282
+  },
+  "kroB100": {
+    "file": "kroB100.tsp",
+    "optimum": 22141
+  },
+  "kroC100": {
+    "file": "kroC100.tsp",
+    "optimum": 20749
+  },
+  "kroD100": {
+    "file": "kroD100.tsp",
+    "optimum": 21294
+  },
+  "kroE100": {
+    "file": "kroE100.tsp",
+    "optimum": 22068
+  },
+  "kroA150": {
+    "file": "kroA150.tsp",
+    "optimum": 26524
+  },
+  "kroB150": {
+    "file": "kroB150.tsp",
+    "optimum": 26130
+  },
+  "kroA200": {
+    "file": "kroA200.tsp",
+    "optimum": 29368
+  },
+  "kroB200": {
+    "file": "kroB200.tsp",
+    "optimum": 29437
+  },
+  "lin105": {
+    "file": "lin105.tsp",
+    "optimum": 14379
+  },
+  "lin318": {
+    "file": "lin318.tsp",
+    "optimum": 42029
+  },
+  "linhp318": {
+    "file": "linhp318.tsp",
+    "optimum": 41345
+  },
+  "nrw1379": {
+    "file": "nrw1379.tsp",
+    "optimum": 56638
+  },
+  "p654": {
+    "file": "p654.tsp",
+    "optimum": 34643
+  },
+  "pa561": {
+    "file": "pa561.tsp",
+    "optimum": 2763
+  },
+  "pcb442": {
+    "file": "pcb442.tsp",
+    "optimum": 50778
+  },
+  "pcb1173": {
+    "file": "pcb1173.tsp",
+    "optimum": 56892
+  },
+  "pcb3038": {
+    "file": "pcb3038.tsp",
+    "optimum": 137694
+  },
+  "pla7397": {
+    "file": "pla7397.tsp",
+    "optimum": 23260728
+  },
+  "pla33810": {
+    "file": "pla33810.tsp",
+    "optimum": 66048945
+  },
+  "pla85900": {
+    "file": "pla85900.tsp",
+    "optimum": 142382641
+  },
+  "pr76": {
+    "file": "pr76.tsp",
+    "optimum": 108159
+  },
+  "pr107": {
+    "file": "pr107.tsp",
+    "optimum": 44303
+  },
+  "pr124": {
+    "file": "pr124.tsp",
+    "optimum": 59030
+  },
+  "pr136": {
+    "file": "pr136.tsp",
+    "optimum": 96772
+  },
+  "pr144": {
+    "file": "pr144.tsp",
+    "optimum": 58537
+  },
+  "pr152": {
+    "file": "pr152.tsp",
+    "optimum": 73682
+  },
+  "pr226": {
+    "file": "pr226.tsp",
+    "optimum": 80369
+  },
+  "pr264": {
+    "file": "pr264.tsp",
+    "optimum": 49135
+  },
+  "pr299": {
+    "file": "pr299.tsp",
+    "optimum": 48191
+  },
+  "pr439": {
+    "file": "pr439.tsp",
+    "optimum": 107217
+  },
+  "pr1002": {
+    "file": "pr1002.tsp",
+    "optimum": 259045
+  },
+  "pr2392": {
+    "file": "pr2392.tsp",
+    "optimum": 378032
+  },
+  "rat99": {
+    "file": "rat99.tsp",
+    "optimum": 1211
+  },
+  "rat195": {
+    "file": "rat195.tsp",
+    "optimum": 2323
+  },
+  "rat575": {
+    "file": "rat575.tsp",
+    "optimum": 6773
+  },
+  "rat783": {
+    "file": "rat783.tsp",
+    "optimum": 8806
+  },
+  "rd100": {
+    "file": "rd100.tsp",
+    "optimum": 7910
+  },
+  "rd400": {
+    "file": "rd400.tsp",
+    "optimum": 15281
+  },
+  "rl1304": {
+    "file": "rl1304.tsp",
+    "optimum": 252948
+  },
+  "rl1323": {
+    "file": "rl1323.tsp",
+    "optimum": 270199
+  },
+  "rl1889": {
+    "file": "rl1889.tsp",
+    "optimum": 316536
+  },
+  "rl5915": {
+    "file": "rl5915.tsp",
+    "optimum": 565530
+  },
+  "rl5934": {
+    "file": "rl5934.tsp",
+    "optimum": 556045
+  },
+  "rl11849": {
+    "file": "rl11849.tsp",
+    "optimum": 923288
+  },
+  "si175": {
+    "file": "si175.tsp",
+    "optimum": 21407
+  },
+  "si535": {
+    "file": "si535.tsp",
+    "optimum": 48450
+  },
+  "si1032": {
+    "file": "si1032.tsp",
+    "optimum": 92650
+  },
+  "st70": {
+    "file": "st70.tsp",
+    "optimum": 675
+  },
+  "swiss42": {
+    "file": "swiss42.tsp",
+    "optimum": 1273
+  },
+  "ts225": {
+    "file": "ts225.tsp",
+    "optimum": 126643
+  },
+  "tsp225": {
+    "file": "tsp225.tsp",
+    "optimum": 3916
+  },
+  "u159": {
+    "file": "u159.tsp",
+    "optimum": 42080
+  },
+  "u574": {
+    "file": "u574.tsp",
+    "optimum": 36905
+  },
+  "u724": {
+    "file": "u724.tsp",
+    "optimum": 41910
+  },
+  "u1060": {
+    "file": "u1060.tsp",
+    "optimum": 224094
+  },
+  "u1432": {
+    "file": "u1432.tsp",
+    "optimum": 152970
+  },
+  "u1817": {
+    "file": "u1817.tsp",
+    "optimum": 57201
+  },
+  "u2152": {
+    "file": "u2152.tsp",
+    "optimum": 64253
+  },
+  "u2319": {
+    "file": "u2319.tsp",
+    "optimum": 234256
+  },
+  "ulysses16": {
+    "file": "ulysses16.tsp",
+    "optimum": 6859
+  },
+  "ulysses22": {
+    "file": "ulysses22.tsp",
+    "optimum": 7013
+  },
+  "usa13509": {
+    "file": "usa13509.tsp",
+    "optimum": 19982859
+  },
+  "vm1084": {
+    "file": "vm1084.tsp",
+    "optimum": 239297
+  },
+  "vm1748": {
+    "file": "vm1748.tsp",
+    "optimum": 336556
+  }
+}
