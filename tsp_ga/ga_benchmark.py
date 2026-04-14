@@ -40,12 +40,14 @@ class OverallStatistics:
 
 
 def _std(values: list[float]) -> float:
+    """Return sample standard deviation and keep zero for single value lists"""
     return statistics.stdev(values) if len(values) > 1 else 0.0
 
 
 def load_benchmark_cases(
     data_dir: Path, optima_file: str = "optima.json"
 ) -> list[BenchmarkCase]:
+    """Load benchmark case metadata and known optima from JSON manifest"""
     manifest_path = data_dir / optima_file
     payload = json.loads(manifest_path.read_text(encoding="utf-8"))
     cases: list[BenchmarkCase] = []
@@ -60,6 +62,7 @@ def load_benchmark_cases(
     return cases
 
 def _first_generation_at_or_below(history: Iterable[float], threshold: float) -> int | None:
+    """Find first generation where best distance reaches the target threshold"""
     for generation, distance in enumerate(history):
         if distance <= threshold:
             return generation
@@ -72,6 +75,7 @@ def benchmark_instance(
     target_gap: float,
     base_seed: int | None,
 ) -> InstanceStatistics:
+    """Run repeated GA solves for one instance and aggregate quality metrics"""
     instance = load_tsplib(case.path)
     threshold = case.optimum * (1.0 + target_gap)
 
@@ -121,6 +125,7 @@ def run_ga_benchmark(
     target_gap: float = 0.05,
     base_seed: int | None = 1234,
 ) -> tuple[list[InstanceStatistics], OverallStatistics]:
+    """Benchmark GA across all configured cases and build overall summary stats"""
     summaries = [
         benchmark_instance(
             case=case,
@@ -151,6 +156,7 @@ def run_ga_benchmark(
 def _print_report(
     summaries: list[InstanceStatistics], overall: OverallStatistics, target_gap: float
 ) -> None:
+    """Print a compact table style report for per instance and overall metrics"""
     print(
         "instance  optimum  best_min  best_mean  gap_mean%  gap_std%  hit_rate%  "
         f"mean_best_gen  mean_hit_gen@{target_gap*100:.1f}%  mean_runtime_s"
@@ -182,6 +188,7 @@ def _print_report(
     )
 
 def main(argv: list[str] | None = None) -> int:
+    """Parse CLI arguments and run the GA benchmark end to end"""
     parser = argparse.ArgumentParser()
     parser.add_argument("--data-dir", type=Path, default=Path("data/tsplib"))
     parser.add_argument("--optima-file", default="optima.json")

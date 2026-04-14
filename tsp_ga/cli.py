@@ -1,45 +1,44 @@
-import argparse
+import json
 from pathlib import Path
-import sys
 
+from core_params import (
+    DATA_DIR,
+    GA_CORE_PARAMS,
+    GA_SINGLE_INSTANCE,
+    OPTIMA_FILE,
+    SINGLE_RUN_SEED,
+)
 from .ga import GAConfig, solve_tsp_ga
 from .io import load_tsplib
-from .tsp import TSPInstance
 
 
-def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--tsp", type=Path)
-    parser.add_argument("--demo", action="store_true")
-    parser.add_argument("--population", type=int, default=200)
-    parser.add_argument("--generations", type=int, default=600)
-    parser.add_argument("--crossover-rate", type=float, default=0.9)
-    parser.add_argument("--mutation-rate", type=float, default=0.2)
-    parser.add_argument("--tournament-size", type=int, default=5)
-    parser.add_argument("--elitism", type=int, default=2)
-    parser.add_argument("--seed", type=int, default=None)
-    args = parser.parse_args(argv)
+def _find_reference_answer(instance_path: Path) -> float | None:
+    """Find known optimum for the selected instance from optima manifest"""
+    optima_path = DATA_DIR / OPTIMA_FILE
+    if not optima_path.exists():
+        return None
 
-    if args.tsp:
-        instance = load_tsplib(args.tsp)
-    else:
-        parser.error("Use --tsp <file>")
-        return 2
+    payload = json.loads(optima_path.read_text(encoding="utf-8"))
+    target_file = instance_path.name.lower()
+    for item in payload.values():
+        file_name = str(item.get("file", "")).replace("\\", "/")
+        if Path(file_name).name.lower() == target_file:
+            return float(item["optimum"])
+    return None
 
-    config = GAConfig(
-        population_size=args.population,
-        generations=args.generations,
-        crossover_rate=args.crossover_rate,
-        mutation_rate=args.mutation_rate,
-        tournament_size=args.tournament_size,
-        elitism=args.elitism,
-        seed=args.seed,
-    )
+
+def main() -> int:
+    """Run one GA solve with configured parameters and print a readable report"""
+    instance_path = Path(GA_SINGLE_INSTANCE)
+    instance = load_tsplib(instance_path)
+    config = GAConfig(seed=SINGLE_RUN_SEED, **GA_CORE_PARAMS)
+    reference_answer = _find_reference_answer(instance_path)
 
     result = solve_tsp_ga(instance, config)
     route_1based = [city + 1 for city in result.best_route]
 
     print(f"Instance: {instance.name} ({instance.size} cities)")
+    print(f"Input file: {instance_path}")
     print(
         "Algorithm: GA | "
         f"population={config.population_size}, generations={config.generations}, "
@@ -47,6 +46,12 @@ def main(argv: list[str] | None = None) -> int:
         f"tournament_size={config.tournament_size}, elitism={config.elitism}, seed={config.seed}"
     )
     print(f"Best distance: {result.best_distance:.6f}")
+    if reference_answer is None:
+        print("Reference answer: not found in optima.json")
+    else:
+        gap_pct = ((result.best_distance - reference_answer) / reference_answer) * 100.0
+        print(f"Reference answer: {reference_answer:.6f}")
+        print(f"Gap vs answer: {gap_pct:+.2f}%")
     print("Best route (1-based): " + " -> ".join(map(str, route_1based + [route_1based[0]])))
     print(
         f"Convergence: start_best={result.history_best[0]:.6f}, "
@@ -54,6 +59,3 @@ def main(argv: list[str] | None = None) -> int:
         f"best_generation={result.best_generation}, runtime_s={result.runtime_seconds:.4f}"
     )
     return 0
-
-if __name__ == "__main__":
-    raise SystemExit(main(sys.argv[1:]))

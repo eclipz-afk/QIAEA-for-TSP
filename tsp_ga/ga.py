@@ -17,7 +17,6 @@ class GAConfig:
     seed: int | None = None
 
 
-# Freeze result objects so returned runs are immutable snapshots
 @dataclass(frozen=True)
 class GAResult:
     best_route: tuple[int, ...]
@@ -31,6 +30,7 @@ class GAResult:
 def _ordered_crossover(
     parent_a: Sequence[int], parent_b: Sequence[int], rng: random.Random
 ) -> list[int]:
+    """Create a child route with ordered crossover while preserving permutation validity"""
     size = len(parent_a)
     left, right = sorted(rng.sample(range(size), 2))
     child = [-1] * size
@@ -50,6 +50,7 @@ def _ordered_crossover(
 
 
 def _mutate_inversion(route: list[int], rng: random.Random) -> None:
+    """Apply inversion mutation by reversing a random subsegment in place"""
     left, right = sorted(rng.sample(range(len(route)), 2))
     route[left : right + 1] = reversed(route[left : right + 1])
 
@@ -59,6 +60,7 @@ def _tournament_select(
     tournament_size: int,
     rng: random.Random,
 ) -> tuple[int, ...]:
+    """Pick one parent by running a tournament over sampled ranked candidates"""
     participants = rng.sample(ranked_population, tournament_size)
     best = min(participants, key=lambda item: item[0])
     return best[1]
@@ -67,12 +69,14 @@ def _tournament_select(
 def _rank_population(
     population: Sequence[tuple[int, ...]], dist_matrix: Sequence[Sequence[float]]
 ) -> list[tuple[float, tuple[int, ...]]]:
+    """Evaluate and sort population by route distance from best to worst"""
     ranked = [(tour_distance(route, dist_matrix), route) for route in population]
     ranked.sort(key=lambda item: item[0])
     return ranked
 
 
 def solve_tsp_ga(instance: TSPInstance, config: GAConfig | None = None) -> GAResult:
+    """Run the full genetic algorithm loop and return best route with history"""
     if config is None:
         config = GAConfig()
 
